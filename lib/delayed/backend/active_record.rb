@@ -56,9 +56,10 @@ module Delayed
           ::ActiveRecord::Base.establish_connection
         end
 
-        # When a worker is exiting, make sure we don't have any locked jobs.
+        # When a worker is exiting/starting, make sure we don't have any locked jobs.
         def self.clear_locks!(worker_name)
-          where(locked_by: worker_name).update_all(locked_by: nil, locked_at: nil)
+          like_name = worker_name.gsub(/pid:\d*/, "pid:%")
+          where('locked_by like ?', like_name).update_all(locked_by: nil, locked_at: nil)
         end
 
         def self.reserve(worker, max_run_time = Worker.max_run_time) # rubocop:disable CyclomaticComplexity

@@ -1,7 +1,8 @@
-**If you're viewing this at https://github.com/collectiveidea/delayed_job_active_record,
-you're reading the documentation for the master branch.
-[View documentation for the latest release
-(4.1.0).](https://github.com/collectiveidea/delayed_job_active_record/tree/v4.1.0)**
+### Differences from original fork:
+
+* changed behavior of `clear_locks!` to ignore pid; effectively requiring uniqueness in process names
+
+---
 
 # DelayedJob ActiveRecord Backend
 
