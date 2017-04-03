@@ -6,7 +6,7 @@
 
 # DelayedJob ActiveRecord Backend
 
-[![Build Status](https://travis-ci.org/socialvibe/delayed_job_active_record.svg?branch=master)
+![Build Status](https://travis-ci.org/socialvibe/delayed_job_active_record.svg?branch=master)
 
 ## Installation
 
